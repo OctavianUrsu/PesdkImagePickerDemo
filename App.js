@@ -1,113 +1,71 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import ImagePicker from 'react-native-image-crop-picker';
+import {TouchableOpacity, Text, SafeAreaView, StyleSheet} from 'react-native';
+import {PESDK} from 'react-native-photoeditorsdk';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
+class App extends React.Component {
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <TouchableOpacity
+          onPress={this._openGallery}
+          style={styles.buttonGallery}>
+          <Text style={styles.text}>Open gallery</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={this._openCamera}
+          style={styles.buttonCamera}>
+          <Text style={styles.text}>Open camera</Text>
+        </TouchableOpacity>
       </SafeAreaView>
-    </>
-  );
-};
+    );
+  }
+
+  _openGallery = () => {
+    ImagePicker.openPicker({
+      width: 300,
+      height: 400,
+      cropping: false,
+    }).then(image => {
+      PESDK.openEditor(image.path);
+    });
+  };
+
+  _openCamera = () => {
+    ImagePicker.openCamera({
+      width: 300,
+      height: 400,
+      cropping: false,
+    }).then(image => {
+      PESDK.openEditor(image.path);
+    });
+  };
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    alignContent: 'center',
+    alignItems: 'center',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
+  text: {
     fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+    color: '#fff',
   },
-  highlight: {
-    fontWeight: '700',
+  buttonGallery: {
+    backgroundColor: '#7f78d2',
+    borderWidth: 1,
+    borderColor: '#4a47a3',
+    padding: 10,
+    margin: 10,
+    width: 200,
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  buttonCamera: {
+    backgroundColor: '#ad62aa',
+    borderWidth: 1,
+    borderColor: '#4a47a3',
+    padding: 10,
+    margin: 10,
+    width: 200,
   },
 });
 
