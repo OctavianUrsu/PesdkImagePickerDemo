@@ -5083,6 +5083,11 @@ react-native-photoeditorsdk@^2.3.2:
   resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.3.2.tgz#26df604c96b3d779260905d6cfd526da4427ad75"
   integrity sha512-g4cKI3rPZsX1LOPxHE/CmplBPW/OSwsVgkSGw9s1/AFYnQUduJoW+wJLt3sTpsGdUlcvkBSuQCwxfxtJ6IfoWg==
 
+react-native-videoeditorsdk@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-videoeditorsdk/-/react-native-videoeditorsdk-2.3.2.tgz#2fdb247e8797a9b3914b849f2391014978075f8d"
+  integrity sha512-r/zzhbFUKoFS8deW+UMIGXDCcbscHqV0iRvQBKBIV+5wAqwg36jhgpq/aU/tNKD+Gg7eHzU4ty+hvHKEvHB+wg==
+
 react-native@0.61.5:
   version "0.61.5"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"

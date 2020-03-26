@@ -233,7 +233,13 @@ PODS:
     - PhotoEditorSDK (~> 10.7)
     - React
     - React-RCTImage
+  - RNVideoEditorSDK (2.3.2):
+    - React
+    - React-RCTImage
+    - VideoEditorSDK (~> 10.7)
   - RSKImageCropper (2.2.3)
+  - VideoEditorSDK (10.7.4):
+    - imglyKit (= 10.7.4)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -266,6 +272,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNPhotoEditorSDK (from `../node_modules/react-native-photoeditorsdk`)
+  - RNVideoEditorSDK (from `../node_modules/react-native-videoeditorsdk`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -274,6 +281,7 @@ SPEC REPOS:
     - imglyKit
     - PhotoEditorSDK
     - RSKImageCropper
+    - VideoEditorSDK
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -328,6 +336,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-image-crop-picker"
   RNPhotoEditorSDK:
     :path: "../node_modules/react-native-photoeditorsdk"
+  RNVideoEditorSDK:
+    :path: "../node_modules/react-native-videoeditorsdk"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -361,7 +371,9 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   RNImageCropPicker: cf129d17e042ce3e96fb9ada967c28f21f977c82
   RNPhotoEditorSDK: 19574d5c0539e61981f6485b0c79760433f426a4
+  RNVideoEditorSDK: 1907b5d1ef57172d9dccf49adf599adc11d9d490
   RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
+  VideoEditorSDK: 3bf51714fe67107fd82e0a21a6723122475a00b5
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: cbbeaa3487bda7c428c19850f85232bbe0e82052
